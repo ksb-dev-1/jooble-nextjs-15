@@ -1,5 +1,6 @@
 {
   "name": "jooble-nextjs-15",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
