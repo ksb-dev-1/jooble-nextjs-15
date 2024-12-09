@@ -1,5 +1,5 @@
 import Link from "next/link";
-import FormSubmitButton from "../FormSubmitButton";
+import FilterJobsButton from "../FilterJobsButton";
 
 const jobs = [1, 2, 3, 4, 5];
 
@@ -38,9 +38,9 @@ export default function JobsSkeleton() {
             </label>
             <input className="skeleton px-4 py-2 placeholder:text-sm border border-transparent" />
           </div>
-          <FormSubmitButton className="mt-4 w-full skeleton px-4">
+          <FilterJobsButton className="mt-4 w-full skeleton px-4">
             Filter jobs
-          </FormSubmitButton>
+          </FilterJobsButton>
         </form>
       </div>
       <div className="w-full text-transparent">

@@ -6,7 +6,8 @@ import { jobFilterSchema, JobFilterValues } from "@/schemas";
 
 // components
 import Select from "./Select";
-import FormSubmitButton from "./FormSubmitButton";
+import FilterJobsButton from "./FilterJobsButton";
+import ClearFilters from "./ClearFilters";
 
 const WorkModeArray = [
   "All",
@@ -42,11 +43,6 @@ async function filterJobs(formData: FormData) {
   redirect(`/pages/jobs/?${searchParams.toString()}`);
 }
 
-async function clearFilters() {
-  "use server";
-  redirect(`/pages/jobs/`);
-}
-
 export default async function JobsFilterServer({
   defaultValues,
 }: JobFilterProps) {
@@ -75,7 +71,7 @@ export default async function JobsFilterServer({
           <input
             id="search"
             name="search"
-            placeholder="Company / Designation / Skill"
+            placeholder="Company / Role / Skill"
             defaultValue={defaultValues.search || ""}
             className="border border-slate-300 focus:ring-2 focus:outline-none focus:ring-ring focus:ring-offset-2 px-4 py-2 placeholder:text-sm"
           />
@@ -141,17 +137,11 @@ export default async function JobsFilterServer({
           </Select>
         </div>
 
-        <FormSubmitButton className="mt-4 w-full border border-violet-600 bg-violet-600 text-white hover:bg-violet-500 px-4 transition">
+        <FilterJobsButton className="mt-4 w-full border border-violet-600 bg-violet-600 text-white hover:bg-violet-500 px-4 transition">
           Filter jobs
-        </FormSubmitButton>
+        </FilterJobsButton>
       </form>
-      <form action={clearFilters}>
-        {isFilter && (
-          <FormSubmitButton className="mt-2 w-full border border-red-600 bg-red-50 text-red-600 hover:bg-red-100 px-4 transition">
-            Clear filters
-          </FormSubmitButton>
-        )}
-      </form>
+      {isFilter && <ClearFilters />}
     </div>
   );
 }

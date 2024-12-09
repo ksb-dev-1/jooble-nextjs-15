@@ -3,7 +3,7 @@
 import { Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
 
-export default function FormSubmitButton(
+export default function FilterJobsButton(
   props: React.ButtonHTMLAttributes<HTMLButtonElement>
 ) {
   const { pending } = useFormStatus();

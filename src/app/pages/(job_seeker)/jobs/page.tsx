@@ -31,7 +31,7 @@ export default async function JobsPage({ searchParams }: JobsPageProps) {
 
   // Unauthorized Access Message
   const UnauthorizedMessage = ({ message }: { message: string }) => (
-    <div className="min-h-[calc(100vh-88px)] pt-[calc(72px+4rem)] pb-[4rem] flex justify-center">
+    <div className="min-h-screen pt-[calc(72px+4rem)] pb-[4rem] flex justify-center">
       <div className="relative max-w-5xl w-full px-4 flex flex-col">
         <div className="bg-red-100 text-red-600 flex flex-col items-center justify-center shadow-md px-4 py-16">
           <p className="flex items-center font-bold text-xl mb-4">
@@ -63,7 +63,7 @@ export default async function JobsPage({ searchParams }: JobsPageProps) {
   };
 
   return (
-    <div className="min-h-[calc(100vh-88px)] pt-[calc(72px+4rem)] pb-[4rem] flex justify-center">
+    <div className="min-h-screen pt-[calc(72px+4rem)] pb-[4rem] flex justify-center">
       <div className="relative max-w-5xl w-full px-4 flex flex-col">
         <Suspense fallback={<JobsSkeleton />}>
           <div className="flex flex-col md:flex-row items-start">
